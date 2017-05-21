@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>Eggsup</title>
+<meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0" >
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Raleway" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="responsive.css" media="screen and (max-width: 1000px)" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+<script src="jquery.min.js"></script>
+</head>
+
+<body>
+
+<div class="top-bar">
+
+
+<p id="account-amount">INR 0.00</p>
+ 
+ <a href=""><i class="fa fa-search"  aria-hidden="true"></i></a>
+ <a href=""><i class="fa fa-shopping-bag" style="right: 4%; " aria-hidden="true"></i></a>
+</div>
+
+
+<div class="topnav" id="myTopnav">
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<!-- main tab containing scroll background images-->
+<div class="main-tab" id="maintb" >  
+     
+    <a href="#"><img class="small-red-box" src="photos/message-box.png" alt="buy items"></a> 
+
+     <div class="round-button" >
+        <a href="#"><img id="b-image1" src="photos/start point.png" alt="about product" /></a>
+     </div>
+      
+<!-- side scroll image round buttons-->
+
+   <div class="round-button-scroll" id="button1">
+        <img src="photos/tomato plate.png" alt="scroll screen 1" onclick="myfunction1()" />
+   </div> 
+
+      <div class="round-button-scroll2"  id="button2">
+          <img src="photos/chili bowl.png" alt="scroll screen 1" onclick="myfunction2()" />
+      </div> 
+
+          <div class="round-button-scroll3" id="button3">   
+             <img src="photos/strawberries-bowl.png" alt="scroll screen 1" onclick="myfunction3()" />
+          </div>    
+</div>
+
+<div class="second-lefttab" >
+
+  <p class="menu-heading">START YOUR DAY</p>
+  <p>with vit plate</p>
+  <a href=""><img class="small-red-box" src="photos/message-box.png" alt="buy items"></a>
+  
+  <div class="round-button1">
+    <a href="#"><img src="photos/special pack.png" alt="special pack" /></a>
+</div>
+<p id="diet-details">healthy deal</p>
+<hr>
+
+</div>
+
+<div class="second-righttab">
+  <p class="menu-heading">C-OVERLOAD</p>
+
+  <div class="round-button2">
+        <a href="#"><img src="photos/20percent.png" alt="20% discount" /></a>
+  </div>
+
+<p id="month-special">September deal</p>
+<hr>
+
+</div>
+
+<div class="third-tab">
+  <p>BUSINESS </br> VALUES </br> ATTITUDE</p>
+  <a href="#"><img class="small-red-box" src="photos/message-box.png" alt="buy items"></a>
+</div>
+
+<div class="third-right-tab">
+<p>Join folks at the foodly family to get the latest news and the best offers</p>
+
+<form method="post" id="email-box" action="send.php" name="newsletter" target="_blank">
+
+              <input type="email" name="signup-email" id="signup-email" value="Your e-mail" placeholder="Your e-mail" 
+              onfocus="if(this.value==this.defaultValue)this.value='';"  />
+
+              <input type="submit" value="Subscribe" name="signup-button" id="sign-up-button" >
+                                          <!-- <input type="submit" value="login" name="signup-button" id="sign-up-button" > -->
+</form> 
+
+</div>
+
+
+<div class="fourth-tab">
+
+<h2>PICKED RECIPES</h2>
+  <p class="advice">With love from the bottom of foodly heart</p>
+  
+</div>
+
+
+
+<div class="fifth-tab">
+   <a href="#"><img class="small-red-box" src="photos/message-box.png" alt="buy items"></a>
+
+   </div>
+
+   <div class="fifth-side-tad">
+   <h2>Radish Yogurt with Pine Nuts</h2>
+   <p class="grey-colored">February 23, 2016<p>
+   </br>
+   <p class="advice">Keen on healthy nutrition? This recipe of radish yogurt is </br> your saver for a great breafast or lunch.</p>
+   <p class="grey-colored">By Anna Reed</p>
+   </div>
+
+
+<div class="sixth-tab">
+
+<div class="bottom-1">
+  <h3>More Info </h3>
+  <a href="#"><p> About Us </p></a>
+  <a href="#"><p>Search </p></a>
+  <a href="#"><p>Terms & Condition </p></a>
+  <a href="#"><p>Return Policy</p></a>
+</div>
+
+<div class="bottom-2">
+  <h3>Foodly Family</h3>
+    <a href="#"><p> Food Markets</p></a>
+    <a href="#"><p>Eco-activity</p></a>
+    <a href="#"><p>Awards</p></a>
+    <a href="#"><p>Recipes</p></a>
+</div>
+
+<div class="bottom-3">
+  <h3>Follow Us</h3>
+    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  	<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  	<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+  </br>
+  	<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+  	<a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+  	<a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+</div>
+
+<div class="bottom-4">
+  <h3>Payment Methods</h3>
+    <a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a>
+  	<a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a>
+  	<a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a>
+  </br>
+  	<a href="#"><i class="fa fa-cc-paypal" aria-hidden="true"></i></a>
+  	<a href="#"><i class="fa fa-cc-diners-club" aria-hidden="true"></i></a>
+  	<a href="#"><i class="fa fa-cc-discover" aria-hidden="true"></i></a>
+</div>
+
+</div>
+<script type='text/javascript' src='jquery.js'></script>
+
+</body>
+
+</html>	
