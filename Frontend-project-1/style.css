@@ -1,0 +1,32 @@
+.box1 {
+	position: absolute;
+	top: 0px;
+	left: 200px;
+	width: 250px;
+	height: 400px;
+	background-color: #D6EAF8;
+	text-align: center;
+	float: left;
+}
+
+.heading {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.box3 {
+	position : absolute;
+	top: 0px;
+	left: 700px;
+	width: 250px;
+	height: 400px;
+	background-color: #D6EAF8;
+	text-align: center;
+
+}
+ 
+.pay-direction {
+	position: absolute;
+	top: 100px;
+	left : 400px;
+}

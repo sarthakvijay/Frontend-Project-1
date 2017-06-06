@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>payment gateway</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="box1">
+<p><span class="heading">USE DISCOUNT CODE HERE</span><br>(STEP-1)</p>
+
+  <form name="myForm"  >
+  Mobile Number:<br>
+  <input type="tel" name="mobile_no" value="" id="mobile">
+  <br>
+  Amount:<br>
+  <input type="number" name="amount" id="amount" min="0">
+  </br>
+  Code Here:
+  <input type="text" id="codehere">
+  <br>
+  </br>
+  <input type="button" onclick="validateForm();" value="GET DISCOUNT"  method="post">
+  </form>
+
+<div class="pay-direction"><img src="arrow.png" width="150" height="150" /></div> 
+
+<div class="box3">
+<p><span class="heading">Pay Here</span><br>(STEP-2)</p>
+
+<form name="myForm2" onsumbit="return validateForm2()" enctype="multipart/form-data" method="post"   >
+
+  Mobile Number:<br>
+  <input type="tel" name="user_mobile" value="" id="mobile" readonly>
+  <br>
+  Username:<br>
+  <input type="name" name="name" value="" id="name">
+  <br>
+  Email Address:<br>
+  <input type="email" name="email" id="emailid" >
+  <br>
+  Amount:<br>
+  <input type="number"  id="amount1" readonly></br>
+  Final Amount:<br>
+  <input type="number" name="processing_fee" id="disamount" min="0" readonly> 
+  </br>
+  <br>
+  </form>
+  <button id="btn" onclick="validateForm2()" >Send Data</button>
+   
+  
+  <script>
+           
+  </script>
+
+  <script>
+  function validateForm() {
+    var x = document.forms["myForm"]["mobile_no"].value;
+    var y = document.forms["myForm"]["amount"].value;
+    var z = document.forms["myForm"]["codehere"].value;
+      console.log(z);
+
+       if(z == "AYUSH") {
+         var k = 200;
+      }
+       else if ( z == "DHUUN") {
+         var k = 250;
+       }
+       else if ( z == "YASIR") {
+         var k = 300;
+       }
+       else if ( z == "REDCARPETUP") {
+         var k = 350;
+       }
+
+       else {
+        var k = 0;
+       } 
+
+    console.log("details filled");
+
+    if (x == ""||y == "") {
+      alert("ENTER COMPLETE DETAILS");
+    }
+    else {
+    console.log("functioncalled");
+    document.forms["myForm2"]["user_mobile"].value = x;
+    document.forms["myForm2"]["amount1"].value = y ;
+       var l = y - k;
+       if(l >= 0){
+        console.log("positive value input");
+        document.forms["myForm2"]["disamount"].value = y - k;
+       }
+       else {
+        alert("Negative Value Transaction Cannot Happen, Please Re-enter the amount details");
+        document.forms["myForm2"]["disamount"].value = 0;
+       }
+
+    } 
+    }
+
+    function validateForm2() {
+        var m = document.forms["myForm2"]["name"].value;
+        var n = document.forms["myForm2"]["emailid"].value;
+
+        if (m == ""||n =="")
+        { 
+          console.log("validation fails");
+          alert("Enter complete user details to pay");
+          
+        }
+        
+        else {
+          console.log("validation true");
+          return true;
+        }
+    }
+ </script>
+
+<script>
+$(document).ready(function(){
+$("#btn").click(function(){
+var vmobile = $("#mobile").val();
+var vname = $("#name").val();
+var vemail = $("#emailid").val();
+var vdisamount = $("#disamount").val();
+
+if(vname=='' && vemail=='')
+{
+alert("Please fill out the form");
+}
+else if(vname=='' && vemail!==''){alert('Name field is required')}
+else if(vemail=='' && vname!==''){alert('Email field is required')}
+else{
+$.post("https://apicherry-v3.redcarpetup.com/init_user_send_link", //Required URL of the page on server
+{ // Data Sending With Request To Server
+user_mobile: vmobile,
+name:vname,
+email:vemail,
+processing_fee: vdisamount,
+loan_type: 700,
+payment_flag : 1 
+},
+function(response,status){ // Required Callback Function
+alert("*----Received Data----*\n\nResponse : " + response+"\n\nStatus : " + status);//"response" receives - whatever written in echo of above PHP script.
+
+});
+}
+});
+});
+</script>
+
+
+</body>
+<html>
